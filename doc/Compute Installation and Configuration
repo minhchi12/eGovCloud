@@ -1,0 +1,20 @@
+Tài liệu này bao gồm các bước cài đặt và cấu hình Compute (Nova/Grizzly)
+Tài liệu này được tạo ngày 25/8/2013
+
+Script cài đặt được đặt trong thư mục eGovCloud/script
+
+Thông tin cơ bản:
+
+- Hypervisor: KVM
+
+
+# Lê Minh Chí viết nội dung này
+
+Các bước cài đặt:
+
+
+
+Các cấu hình:
+
+
+DSP Cloud Team
