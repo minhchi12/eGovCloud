@@ -1,6 +1,6 @@
 eGovCloud
 =========
 
-Thư mục tạm thời
+Thư mục tạm của eGov Cloud Project
 
 DSP Cloud Team
