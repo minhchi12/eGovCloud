@@ -3,18 +3,43 @@ Tài liệu này được tạo ngày 25/8/2013
 
 Script cài đặt được đặt trong thư mục eGovCloud/script
 
-Thông tin cơ bản:
+I. Thông tin cơ bản:
 
 - Hypervisor: KVM
 - Số lượng server cài đặt: 10
 
 # Lê Minh Chí viết nội dung này
 
-Các bước cài đặt:
+II. Các bước cài đặt:
 
+1. Chuẩn bị hệ điều hành: Ubuntu 12.04 LTS phiên bản server 64 bits
+2. Cấu hình địa chỉ IP các card mạng - IP cho 2 card mạng tương ứng 2 dải management network và data network.
+3. Cài đặt package ntp và đặt đồng bộ thời gian với máy chủ controller
+4. Cài đặt package vlan để hỗ trợ việc tạo interface, gán interface vào vlan tương ứng
+5. Cài đặt package bridge-utils để thực hiện việc tạo các card ảo, đóng vai trò kết nối với các VMs ra ngoài.
+6. Bật ip_forwarding để cho phép chuyển tiếp gói tin khi đi qua compute node. đây được coi như tính năng 
+switching đối với các gói tin đi ra, đi vào thông qua compute node
+7. Cài đặt hypervisor KVM
+8. Cài đặt openV-switch để thực hiện việc tạo switch ảo, kết nối các bridge interface đến các VMs
+9. Cài đặt quantum-agent (network-plugin)
+10. Cài đặt nova-compute
 
+III. Các cấu hình:
 
-Các cấu hình:
+1. Cấu hình card mạng
+# Management network
+auto eth0
+iface eth0 inet static
+address 10.196.200.x
+netmask 255.255.255.0
+gateway 10.196.200.1
 
+# Data network
+auto eth1
+iface eth1 inet static
+address 10.196.202.x
+netmask 255.255.255.0
+
+2. Cài đặt ntp và cấu hình đồng bộ thời gian
 
 DSP Cloud Team
